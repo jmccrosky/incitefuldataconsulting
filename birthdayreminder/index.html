@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirthdayReminder: Never Forget - Simple Birthday Tracking for iOS</title>
+    <meta name="description" content="A simple iOS app to help you remember birthdays. Free local storage, optional AI-powered import, and cloud sync. Privacy-first, no ads.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nordic-white: #F7F7F5;
+            --nordic-cream: #E8E6E1;
+            --nordic-gray: #4A5568;
+            --nordic-dark: #2D3748;
+            --nordic-blue: #2C5282;
+            --nordic-deep-blue: #1A365D;
+            --nordic-accent: #D97706;
+            --nordic-light-accent: #FBD38D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--nordic-dark);
+            background-color: var(--nordic-white);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--nordic-gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--nordic-gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--nordic-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--nordic-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--nordic-blue);
+            color: var(--nordic-blue);
+            margin-left: 1rem;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--nordic-blue);
+            color: white;
+        }
+
+        .placeholder-note {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--nordic-gray);
+            font-style: italic;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            color: var(--nordic-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--nordic-gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--nordic-cream) 0%, var(--nordic-white) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--nordic-gray);
+            line-height: 1.6;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, var(--nordic-blue) 0%, var(--nordic-deep-blue) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+
+        .pricing-section h2 {
+            color: white;
+        }
+
+        .pricing-section .section-intro {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            color: var(--nordic-dark);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--nordic-accent);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--nordic-accent);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--nordic-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: var(--nordic-gray);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--nordic-accent);
+            font-weight: 700;
+        }
+
+        .privacy-banner {
+            background-color: var(--nordic-cream);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .privacy-banner h3 {
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .privacy-item {
+            text-align: center;
+        }
+
+        .privacy-item strong {
+            display: block;
+            color: var(--nordic-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-section {
+            background-color: var(--nordic-cream);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .about-section p {
+            color: var(--nordic-gray);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--nordic-cream);
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .footer-text {
+            color: var(--nordic-gray);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+
+            .features-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">BirthdayReminder</div>
+                <ul class="nav-links">
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Never Forget a Birthday</h1>
+            <p class="tagline">Simple birthday tracking for iOS</p>
+            <p class="hero-description">
+                A straightforward app that helps you keep track of birthdays without the clutter.
+                Free local storage, optional AI-powered import, and privacy-first design.
+            </p>
+            <a href="#download" class="cta-button">Download on App Store</a>
+            <span class="placeholder-note">Coming soon to the App Store</span>
+        </section>
+
+        <section id="features">
+            <h2>Everything You Need</h2>
+            <p class="section-intro">
+                Start with powerful free features. Upgrade to Premium only if you need AI import capabilities.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Local Storage</h3>
+                    <p>
+                        Store unlimited birthdays directly on your device. No account required,
+                        no cloud dependency. Your data stays with you.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>
+                        Get reminded before upcoming birthdays. All notifications are processed
+                        locally on your device for complete privacy.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Clean Interface</h3>
+                    <p>
+                        No clutter, just what you need. Add names, dates, nicknames, and notes
+                        with a beautifully simple interface.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Import</h3>
+                    <p>
+                        Premium feature: Snap photos of invitations or handwritten lists.
+                        AI extracts birthdays instantly from any format.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Optional Cloud Sync</h3>
+                    <p>
+                        Premium feature: Sign in with Apple to sync across devices.
+                        Completely optional—free version works perfectly offline.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>Easy Export</h3>
+                    <p>
+                        Export all your birthdays as CSV anytime. Your data, your control.
+                        Available to all users, free and Premium.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pricing-section">
+            <h2>Simple, Honest Pricing</h2>
+            <p class="section-intro">
+                Core birthday tracking is free forever. Premium adds AI import and optional cloud sync.
+            </p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <div class="price-period">Forever</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited local birthday storage</li>
+                        <li>Smart notifications</li>
+                        <li>Clean, simple interface</li>
+                        <li>Works completely offline</li>
+                        <li>No account required</li>
+                        <li>Export to CSV</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Premium Monthly</h3>
+                    <div class="price">$0.99</div>
+                    <div class="price-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free, plus:</li>
+                        <li>AI-powered import (10/week)</li>
+                        <li>Optional cloud sync</li>
+                        <li>Sign in with Apple</li>
+                        <li>Support development</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Premium Annual</h3>
+                    <div class="price">$4.99</div>
+                    <div class="price-period">per year (save 17%)</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free, plus:</li>
+                        <li>AI-powered import (10/week)</li>
+                        <li>Optional cloud sync</li>
+                        <li>Sign in with Apple</li>
+                        <li>Support development</li>
+                        <li>Best value!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="privacy-banner">
+            <h3>Privacy First, Always</h3>
+            <p>Built with privacy as the foundation, not an afterthought.</p>
+
+            <div class="privacy-highlights">
+                <div class="privacy-item">
+                    <strong>No Ads</strong>
+                    <p>Ever. Period.</p>
+                </div>
+                <div class="privacy-item">
+                    <strong>No Tracking</strong>
+                    <p>We don't follow you around</p>
+                </div>
+                <div class="privacy-item">
+                    <strong>No Data Selling</strong>
+                    <p>Your data is yours, not ours to sell</p>
+                </div>
+                <div class="privacy-item">
+                    <strong>Easy Deletion</strong>
+                    <p>Export or delete anytime</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>About This Project</h2>
+            <p style="margin-bottom: 1rem;">
+                BirthdayReminder started as a personal project to explore AI-assisted development.
+                While there are many birthday reminder apps available, I wanted something
+                straightforward that worked well for me—and I thought it might be useful to others too.
+            </p>
+            <p>
+                This is a solo project by Inciteful Data Consulting Oy, built to solve a simple
+                problem: remembering birthdays. If you find it useful, that's wonderful. If you prefer
+                one of the many alternatives, that's wonderful too.
+            </p>
+        </section>
+
+        <section id="download" style="text-align: center; padding: 3rem 0;">
+            <h2>Get Started Today</h2>
+            <p style="color: var(--nordic-gray); margin-bottom: 2rem; font-size: 1.1rem;">
+                Available for iPhone. Coming soon to the App Store.
+            </p>
+            <a href="#" class="cta-button">Download on App Store</a>
+            <span class="placeholder-note">App Store link coming soon</span>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="mailto:mccrosky@gmail.com">Contact</a>
+            </div>
+            <p class="footer-text">
+                &copy; 2025 Inciteful Data Consulting Oy. Built with care in Helsinki.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

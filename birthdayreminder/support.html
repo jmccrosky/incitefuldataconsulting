@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - BirthdayReminder</title>
+    <meta name="description" content="Get help with BirthdayReminder. FAQs, troubleshooting, and contact information.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nordic-white: #F7F7F5;
+            --nordic-cream: #E8E6E1;
+            --nordic-gray: #4A5568;
+            --nordic-dark: #2D3748;
+            --nordic-blue: #2C5282;
+            --nordic-deep-blue: #1A365D;
+            --nordic-accent: #D97706;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--nordic-dark);
+            background-color: var(--nordic-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .page-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--nordic-gray);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background-color: var(--nordic-accent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--nordic-blue);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: var(--nordic-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--nordic-gray);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--nordic-gray);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--nordic-cream) 0%, var(--nordic-white) 100%);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--nordic-deep-blue);
+        }
+
+        .contact-box a {
+            color: var(--nordic-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .highlight-box {
+            background-color: var(--nordic-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            color: white;
+            margin-bottom: 0;
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--nordic-cream);
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">BirthdayReminder</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header">
+            <h1>Support</h1>
+            <p class="subtitle">Need help with BirthdayReminder? You're in the right place.</p>
+        </div>
+
+        <section id="general">
+            <h2>General Questions</h2>
+
+            <div class="faq-item">
+                <h4>Is the app really free?</h4>
+                <p>
+                    Yes! The core birthday tracking features are completely free with no limitations.
+                    You only need Premium ($0.99/month or $4.99/year) if you want AI-powered import
+                    features or cloud sync.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Do I need to create an account?</h4>
+                <p>
+                    No! The app works completely without an account. You only need to sign in with
+                    Apple if you want cloud sync (Premium feature).
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What data do you collect?</h4>
+                <p>
+                    For free users: minimal anonymous usage analytics. Your birthdays stay only on
+                    your device. For Premium users who opt into cloud sync: birthdays are stored
+                    securely on our servers. See our <a href="privacy.html" style="color: var(--nordic-blue);">Privacy Policy</a> for details.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I use the app offline?</h4>
+                <p>
+                    Absolutely. The free version works 100% offline. Premium users can also use
+                    the app offline after syncing.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What platforms are supported?</h4>
+                <p>
+                    Currently iOS only (iPhone). iPad and Android may come in the future.
+                </p>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Features & Usage</h2>
+
+            <h3>Birthday Management</h3>
+
+            <div class="faq-item">
+                <h4>How do I add a birthday?</h4>
+                <p>
+                    Tap the "+" button on the home screen, enter the person's name and birthday,
+                    and optionally add a nickname or notes.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I add birthdays without a birth year?</h4>
+                <p>
+                    Yes! Birth year is optional. You can just enter the month and day if you
+                    don't know someone's birth year.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do notifications work?</h4>
+                <p>
+                    The app sends you local notifications before upcoming birthdays. You can
+                    customize notification timing in Settings.
+                </p>
+            </div>
+
+            <h3>Premium Features</h3>
+
+            <div class="faq-item">
+                <h4>What is AI-powered import?</h4>
+                <p>
+                    Snap a photo of birthday invitations, handwritten lists, or upload CSV files
+                    and spreadsheets—AI automatically extracts the birthdays in any date format.
+                    Perfect for digitizing paper lists, party invitations, or old spreadsheets.
+                    You review and confirm before adding them to your app.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How many AI imports do I get?</h4>
+                <p>
+                    Premium users get 10 imports per week. Each import can contain multiple birthdays.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What file formats does AI import support?</h4>
+                <p>
+                    Photos (JPG, PNG) including handwritten lists and invitations, PDFs,
+                    spreadsheets (CSV, Excel), and text files. Maximum file size is 10MB.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How does cloud sync work?</h4>
+                <p>
+                    Sign in with Apple (Premium required), and your birthdays will be stored
+                    securely in the cloud. Changes sync automatically when you're online.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What happens if my Premium subscription expires?</h4>
+                <p>
+                    You keep all your birthdays! If you had cloud sync enabled, we'll automatically
+                    download your data to your device before deleting it from our servers. You can
+                    continue using the app with local storage.
+                </p>
+            </div>
+        </section>
+
+        <section id="data">
+            <h2>Data & Privacy</h2>
+
+            <div class="faq-item">
+                <h4>How do I export my data?</h4>
+                <p>
+                    Go to Settings → Export Data. You'll get a CSV file with all your birthdays
+                    that you can save or email to yourself. Available to all users.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do I delete my data?</h4>
+                <p>
+                    Go to Settings → Delete Account. This will immediately delete all your data
+                    from our servers (if using cloud sync) and from your device.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Where is my data stored?</h4>
+                <p>
+                    Free users: only on your device. Premium users with cloud sync: encrypted
+                    on Cloudflare's global network.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Does AI import use my data for training?</h4>
+                <p>
+                    We use Google Gemini AI for birthday extraction. According to Google's policy,
+                    data sent to their API may be used for service improvement but not for ad
+                    targeting. Your imported data is deleted from our servers immediately after
+                    processing.
+                </p>
+            </div>
+        </section>
+
+        <section id="subscription">
+            <h2>Subscription & Billing</h2>
+
+            <div class="faq-item">
+                <h4>How much does Premium cost?</h4>
+                <p>
+                    Monthly: $0.99/month<br>
+                    Annual: $4.99/year (save 17%)
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do I cancel my subscription?</h4>
+                <p>
+                    Open iOS Settings → tap your name → Subscriptions → Birthday Reminder →
+                    Cancel Subscription. You can also manage subscriptions from within the app.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Do you offer refunds?</h4>
+                <p>
+                    Refunds are handled by Apple. Contact Apple Support or request a refund at
+                    <a href="https://reportaproblem.apple.com" style="color: var(--nordic-blue);">reportaproblem.apple.com</a>.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I switch between monthly and annual plans?</h4>
+                <p>
+                    Yes! Go to Settings → Manage Subscription in the app, or change it in
+                    iOS Settings → Subscriptions.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What happens to my data if I cancel?</h4>
+                <p>
+                    Your data is automatically saved to your device before being deleted from
+                    our servers. You keep everything and can continue using the free version.
+                </p>
+            </div>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+
+            <div class="faq-item">
+                <h4>Notifications aren't working</h4>
+                <ol>
+                    <li>Make sure you granted notification permissions when first opening the app</li>
+                    <li>Check iOS Settings → Notifications → Birthday Reminder - ensure "Allow Notifications" is enabled</li>
+                    <li>Verify you have at least one upcoming birthday in the app</li>
+                </ol>
+            </div>
+
+            <div class="faq-item">
+                <h4>AI import isn't working</h4>
+                <ol>
+                    <li>Make sure you have an active Premium subscription</li>
+                    <li>Check that your file is under 10MB</li>
+                    <li>Try using a clearer photo or higher quality scan</li>
+                    <li>Contact support if the issue persists</li>
+                </ol>
+            </div>
+
+            <div class="faq-item">
+                <h4>Cloud sync isn't syncing</h4>
+                <ol>
+                    <li>Make sure you're signed in with Apple (Settings → Sign In)</li>
+                    <li>Check that you have an internet connection</li>
+                    <li>Try signing out and signing back in</li>
+                    <li>Contact support if sync issues continue</li>
+                </ol>
+            </div>
+
+            <div class="faq-item">
+                <h4>App is crashing</h4>
+                <ol>
+                    <li>Try force-quitting and reopening the app</li>
+                    <li>Restart your iPhone</li>
+                    <li>Make sure you have the latest version from the App Store</li>
+                    <li>Contact support with details about when the crash occurs</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Still Need Help?</h2>
+
+            <div class="contact-box">
+                <h3>Contact Support</h3>
+                <p>
+                    Can't find an answer? I'm here to help!
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    <strong>Email:</strong> <a href="mailto:mccrosky@gmail.com">mccrosky@gmail.com</a>
+                </p>
+                <p style="margin-top: 1rem;">
+                    I'm a solo developer, so please allow 1-2 business days for a response.
+                </p>
+            </div>
+
+            <h3>Bug Reports & Feature Requests</h3>
+            <p>
+                Find a bug? Have a feature idea? I'd love to hear from you!
+            </p>
+            <p>
+                Email: <a href="mailto:mccrosky@gmail.com" style="color: var(--nordic-blue); font-weight: 600;">mccrosky@gmail.com</a>
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>When reporting bugs, please include:</strong></p>
+                <ul style="margin-top: 1rem; margin-bottom: 0;">
+                    <li>Your iOS version</li>
+                    <li>App version (found in Settings)</li>
+                    <li>Steps to reproduce the issue</li>
+                    <li>Screenshots if applicable</li>
+                </ul>
+            </div>
+
+            <h3>About</h3>
+            <p>
+                BirthdayReminder was created as a personal project to explore AI-assisted
+                development. It's maintained by one person (me!), so I appreciate your patience
+                with support requests.
+            </p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="mailto:mccrosky@gmail.com">Contact</a>
+            </div>
+            <p style="color: var(--nordic-gray); font-size: 0.95rem;">
+                &copy; 2025 Inciteful Data Consulting Oy
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
