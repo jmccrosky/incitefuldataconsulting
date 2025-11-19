@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse McCrosky - Data Scientist & Sustainability Leader</title>
+    <meta name="description" content="Jesse McCrosky is a Principal Data Scientist and Head of Sustainability and Social Change at Mozilla/Thoughtworks, specializing in tech policy, AI research, and social impact.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nordic-white: #F7F7F5;
+            --nordic-cream: #E8E6E1;
+            --nordic-gray: #4A5568;
+            --nordic-dark: #2D3748;
+            --nordic-blue: #2C5282;
+            --nordic-deep-blue: #1A365D;
+            --nordic-accent: #D97706;
+            --nordic-light-accent: #FBD38D;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--nordic-dark);
+            background-color: var(--nordic-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--nordic-gray);
+            font-weight: 400;
+        }
+
+        nav {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--nordic-accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--nordic-accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background-color: var(--nordic-accent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--nordic-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--nordic-gray);
+            font-size: 1.1rem;
+        }
+
+        .about-content {
+            background: linear-gradient(135deg, var(--nordic-cream) 0%, var(--nordic-white) 100%);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box {
+            background-color: var(--nordic-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-left: 1rem;
+        }
+
+        .experience-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            color: var(--nordic-accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: var(--nordic-gray);
+        }
+
+        ul li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--nordic-accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--nordic-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--nordic-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--nordic-gray);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .about-content {
+                padding: 1.5rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-links a {
+                justify-content: center;
+            }
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <div class="container">
+        <header>
+            <h1>Jesse McCrosky</h1>
+            <p class="subtitle">Principal Data Scientist & Head of Sustainability and Social Change</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience & Projects</a>
+                <a href="#publications">Publications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>
+                    I'm a Principal Data Scientist and Head of Sustainability and Social Change at Mozilla and Thoughtworks,
+                    based in Helsinki, Finland. With over 10 years of experience working with data and statistics,
+                    I've had the privilege of contributing to impactful research at organizations including Mozilla,
+                    Google, and Statistics Canada.
+                </p>
+                <p>
+                    My work sits at the intersection of technology, policy, and social impact. I lead crowdsourced
+                    research initiatives that power Mozilla's policy and advocacy efforts, advise on critical tech
+                    policy matters including the Digital Services Act (DSA), and investigate the societal implications
+                    of emerging technologies.
+                </p>
+            </div>
+            <div class="highlight-box">
+                <p>
+                    <strong>Current Focus:</strong> Studying the impact of generative AI on elections, evaluating
+                    tools for identifying AI-generated content, and advancing sustainable technology practices.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience & Projects</h2>
+
+            <div class="experience-item">
+                <h3>Mozilla</h3>
+                <span class="role">Principal Data Scientist</span>
+                <ul>
+                    <li>Lead crowdsourced research to inform Mozilla's policy and advocacy initiatives</li>
+                    <li>Advise on tech policy, with particular focus on the Digital Services Act (DSA)</li>
+                    <li>Study the impact of generative AI on democratic processes and elections</li>
+                    <li>Evaluate effectiveness of tools for identifying AI-generated or AI-modified content</li>
+                    <li>Conduct research on YouTube's user controls and recommendation systems (RegretsReporter)</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Thoughtworks</h3>
+                <span class="role">Head of Sustainability and Social Change, Finland</span>
+                <ul>
+                    <li>Drive sustainable technology practices and initiatives</li>
+                    <li>Lead social impact programs and advocacy efforts</li>
+                    <li>Engage with the Green Software Foundation on environmental tech initiatives</li>
+                    <li>Bridge technology development with environmental and social responsibility</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research Background</h3>
+                <span class="role">Academia & Public Sector</span>
+                <ul>
+                    <li>University of Waterloo - Academic research and education</li>
+                    <li>Statistics Canada - Data analysis and statistical research</li>
+                    <li>Google - Data science and research initiatives</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Writing</h2>
+            <p>
+                My research has focused on algorithmic accountability, platform governance, and the societal
+                impacts of AI systems. I've contributed to studies examining:
+            </p>
+            <ul>
+                <li>The effectiveness of YouTube's user controls and recommendation algorithms</li>
+                <li>Methods for detecting and evaluating AI-generated content</li>
+                <li>The impact of generative AI on electoral processes and democratic discourse</li>
+                <li>Platform accountability under the Digital Services Act</li>
+            </ul>
+            <p style="margin-top: 2rem;">
+                Selected publications and writing can be found on <a href="https://wrongbutuseful.com/author/mccrosky/" style="color: var(--nordic-blue); font-weight: 500;">Wrong, but useful</a>
+                and through my <a href="https://www.infoq.com/profile/Jesse-McCrosky/" style="color: var(--nordic-blue); font-weight: 500;">InfoQ profile</a>.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                I'm always interested in connecting with researchers, policymakers, and practitioners working
+                at the intersection of technology and social impact.
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/jesse-mccrosky/" target="_blank" rel="noopener noreferrer">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/mccrosky" target="_blank" rel="noopener noreferrer">
+                    <span>Twitter/X</span>
+                </a>
+                <a href="https://www.thoughtworks.com/profiles/j/jesse-mccrosky" target="_blank" rel="noopener noreferrer">
+                    <span>Thoughtworks Profile</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Jesse McCrosky. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
