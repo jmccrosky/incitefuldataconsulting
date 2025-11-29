@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Sawing Methods Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Log Sawing Methods & Tradeoffs</h1>
+        <p>Explore how different sawing techniques affect lumber yield, stability, and cost.</p>
+    </header>
+
+    <main>
+        <div class="visualization-container">
+            <canvas id="logCanvas" width="600" height="600"></canvas>
+        </div>
+
+        <div class="controls-container">
+            <div class="settings-panel">
+                <h2>Settings</h2>
+                <div class="control-group">
+                    <label for="logDiameter">Log Diameter: <span id="logDiameterVal">24</span>"</label>
+                    <input type="range" id="logDiameter" min="10" max="40" value="24" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="boardThickness">Board Thickness: <span id="boardThicknessVal">1.5</span>"</label>
+                    <input type="range" id="boardThickness" min="1" max="4" value="1.5" step="0.25">
+                </div>
+                <div class="control-group">
+                    <label for="bladeKerf">Blade Kerf: <span id="bladeKerfVal">0.25</span>"</label>
+                    <input type="range" id="bladeKerf" min="0.125" max="0.375" value="0.25" step="0.0625">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="method-btn active" data-method="plain">Plain Sawn</button>
+                <button class="method-btn" data-method="quarter">Quarter Sawn</button>
+                <button class="method-btn" data-method="rift">Rift Sawn</button>
+                <button class="method-btn" data-method="live">Live Sawn</button>
+            </div>
+
+            <div id="boardDetails" class="board-details hidden">
+                <h3>Board Details</h3>
+                <div class="detail-row"><span>Width:</span> <span id="detailWidth">-</span></div>
+                <div class="detail-row"><span>Grain Angle:</span> <span id="detailAngle">-</span></div>
+                <div class="detail-row"><span>Classification:</span> <span id="detailClass">-</span></div>
+                <div class="detail-row"><span>Stability:</span> <span id="detailStability">-</span></div>
+            </div>
+
+            <div id="infoPanel" class="info-panel">
+                <!-- Content will be injected by JS -->
+                <h2 id="methodTitle">Plain Sawn</h2>
+                <p id="methodDescription">The most common and cost-effective method. The log is cut tangentially to the
+                    growth rings.</p>
+
+                <div class="tradeoffs">
+                    <div class="tradeoff-item">
+                        <h3>Pros</h3>
+                        <ul id="prosList">
+                            <li>High yield (least waste)</li>
+                            <li>Fast and cheap to produce</li>
+                            <li>Beautiful "cathedral" grain pattern</li>
+                        </ul>
+                    </div>
+                    <div class="tradeoff-item">
+                        <h3>Cons</h3>
+                        <ul id="consList">
+                            <li>Less stable (prone to cupping/twisting)</li>
+                            <li>Expands/contracts more with moisture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Interactive Educational Visualization</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
