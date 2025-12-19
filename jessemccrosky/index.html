@@ -288,6 +288,109 @@
         .scroll-smooth {
             scroll-behavior: smooth;
         }
+
+        /* Publications Section Styles */
+        .year-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        .year-section:last-child {
+            border-bottom: none;
+        }
+
+        .year-header {
+            font-size: 1.75rem;
+            color: var(--nordic-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .publication-item {
+            margin-bottom: 1.75rem;
+            padding-left: 1.25rem;
+            position: relative;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .pub-type {
+            color: var(--nordic-accent);
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-authors {
+            display: block;
+            color: var(--nordic-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+        }
+
+        .pub-title {
+            display: inline;
+            color: var(--nordic-blue);
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .pub-title:hover {
+            color: var(--nordic-accent);
+        }
+
+        .pub-title-plain {
+            display: inline;
+            color: var(--nordic-dark);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .pub-venue {
+            display: block;
+            font-style: italic;
+            color: var(--nordic-gray);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .pub-venue a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .pub-venue a:hover {
+            color: var(--nordic-accent);
+        }
+
+        @media (max-width: 768px) {
+            .year-header {
+                font-size: 1.5rem;
+            }
+
+            .pub-title, .pub-title-plain {
+                font-size: 1rem;
+            }
+
+            .pub-venue, .pub-authors {
+                font-size: 0.85rem;
+            }
+
+            .publication-item {
+                padding-left: 0.5rem;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body class="scroll-smooth">
@@ -376,21 +479,482 @@
         </section>
 
         <section id="publications">
-            <h2>Publications & Writing</h2>
-            <p>
-                My research has focused on algorithmic accountability, platform governance, and the societal
-                impacts of AI systems. I've contributed to studies examining:
-            </p>
-            <ul>
-                <li>The effectiveness of YouTube's user controls and recommendation algorithms</li>
-                <li>Methods for detecting and evaluating AI-generated content</li>
-                <li>The impact of generative AI on electoral processes and democratic discourse</li>
-                <li>Platform accountability under the Digital Services Act</li>
-            </ul>
-            <p style="margin-top: 2rem;">
-                Selected publications and writing can be found on <a href="https://wrongbutuseful.com/author/mccrosky/" style="color: var(--nordic-blue); font-weight: 500;">Wrong, but useful</a>
-                and through my <a href="https://www.infoq.com/profile/Jesse-McCrosky/" style="color: var(--nordic-blue); font-weight: 500;">InfoQ profile</a>.
-            </p>
+            <h2>Publications & Speaking</h2>
+
+            <div class="year-section">
+                <h3 class="year-header">2025</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://youtu.be/9eYhS-x9CV8?si=uBq7uP0Hm2S4hQ9g" class="pub-title" target="_blank" rel="noopener">The Open Source Imperative in AI: Transparency, Governance, and Global Collaboration</a>
+                        <span class="pub-venue">The Linux Foundation Open Source Summit Seoul, November 4-5, 2025</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Keynote: Ethical Paradoxes and Governance of AI – Norms and Practices from a Global Perspective</span>
+                        <span class="pub-venue"><a href="https://forum.gosim.org/en/" target="_blank" rel="noopener">GOSIM AI Vision Forum 2025</a>, Hangzhou, China, September 12, 2025</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://egen.ai/insights/managing-the-risk-of-bias-in-ai-systems/" class="pub-title" target="_blank" rel="noopener">Managing the risk of bias in AI systems</a>
+                        <span class="pub-venue">Egen Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎙️</span>
+                    <div class="pub-content">
+                        <a href="https://tfir.io/why-ai-governance-is-the-foundation-of-a-real-ai-strategy/" class="pub-title" target="_blank" rel="noopener">Why AI Governance Is the Foundation of a Real AI Strategy</a>
+                        <span class="pub-venue">TFIR Podcast</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://egen.ai/insights/why-ai-governance-matters-now-and-it-entails/" class="pub-title" target="_blank" rel="noopener">Why AI governance matters now and what it entails</a>
+                        <span class="pub-venue">Egen Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://egen.ai/insights/genai-confidence-score-trust-framework/" class="pub-title" target="_blank" rel="noopener">Building trust in GenAI applications: A new confidence score approach</a>
+                        <span class="pub-venue">Egen Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Beknazar-Yuzbashev, G., Jiménez-Durán, R., McCrosky, J., Stalinski, M.</span>
+                        <a href="https://www.cesifo.org/en/publications/2025/working-paper/toxic-content-and-user-engagement-social-media-evidence-field" class="pub-title" target="_blank" rel="noopener">Toxic Content and User Engagement on Social Media: Evidence from a Field Experiment</a>
+                        <span class="pub-venue">Submitted to American Economic Review</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2024</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/ai-overview-google-search/" class="pub-title" target="_blank" rel="noopener">When Search Engine's AI Overviews Are Bad, They're Really Bad — What's The Fix?</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog (consulted expert)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://schedule.mozillafestival.org/session/BSBNEP-1" class="pub-title" target="_blank" rel="noopener">A Collaborative Taxonomy of TikTok Experiences</a>
+                        <span class="pub-venue">Mozilla Festival House Amsterdam, June 11-13, 2024 (session co-lead)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://schedule.mozillafestival.org/session/LTJPFB-1" class="pub-title" target="_blank" rel="noopener">Democracy by Design: A look at the first half of this "Year of Democracy"</a>
+                        <span class="pub-venue">Mozilla Festival House Amsterdam, June 11-13, 2024 (panelist)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">The RegretsReporter Program: evolving methods to meet research challenges with crowdsourced data</span>
+                        <span class="pub-venue"><a href="https://datadonation.eu/community/symposium-2024" target="_blank" rel="noopener">Data Donation Symposium 2024</a></span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://dataethics.eu/ai-weapons-could-risk-racist-decisions/" class="pub-title" target="_blank" rel="noopener">AI Weapons Could Risk Racist Decisions</a>
+                        <span class="pub-venue">DataEthics EU ThinkDo Tank</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/who-wrote-that-evaluating-tools-to-detect-ai-generated-text/" class="pub-title" target="_blank" rel="noopener">Who Wrote That? Evaluating Tools to Detect AI-Generated Text</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://www.thoughtworks.com/about-us/locations/finland/shaping-ai-responsibly" class="pub-title" target="_blank" rel="noopener">Shaping AI responsibly</a>
+                        <span class="pub-venue">Breakfast seminar, Thoughtworks Finland (invited speaker and panelist)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/navigating-the-information-ecosystem-in-the-age-of-generative-ai/" class="pub-title" target="_blank" rel="noopener">Navigating the Information Ecosystem in the Age of Generative AI</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/chatgpt-election-policies/" class="pub-title" target="_blank" rel="noopener">ChatGPT Flouts Its Own Election Policies</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2023</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., O'Carroll, T., Sinders, C., Szymielewicz, K.</span>
+                        <a href="https://panoptykon.org/sites/default/files/2023-11/peoplevsbigtech_panoptykon_prototyping-empowerment_brief_20112023.pdf" class="pub-title" target="_blank" rel="noopener">Prototyping User Empowerment: Towards DSA-compliant recommender systems</a>
+                        <span class="pub-venue">Briefing note published by Panoptykon Foundation and People versus Big Tech</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Responsible AI: Fireside Chat</span>
+                        <span class="pub-venue"><a href="https://decarb.greensoftware.foundation/" target="_blank" rel="noopener">Decarbonize Software Conference</a></span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Likainen tekoäly? (Dirty AI?)</span>
+                        <span class="pub-venue">Analyytikko magazine (Finland's first data science expert magazine)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Dawson, R., Chami, M., McCrosky, J.</span>
+                        <a href="https://www.thoughtworks.com/insights/whitepapers/ai-governance-a-lean-approach" class="pub-title" target="_blank" rel="noopener">AI governance: A lean approach</a>
+                        <span class="pub-venue">White Paper published by Thoughtworks</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Responsible AI: how to do better</span>
+                        <span class="pub-venue">Keynote at Avanza Tech</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://www.youtube.com/watch?v=a5Fi1z0mEm4" class="pub-title" target="_blank" rel="noopener">Socially responsible AI: Practical tools for robust design</a>
+                        <span class="pub-venue"><a href="https://www.thoughtworks.com/about-us/events/xconf/2023/europe" target="_blank" rel="noopener">XConf Europe 2023</a>, Amsterdam, September 21, 2023</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://www.infoq.com/articles/carbon-emissions-generative-ai/" class="pub-title" target="_blank" rel="noopener">Managing the Carbon Emissions Associated with Generative AI</a>
+                        <span class="pub-venue">InfoQ</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Auditing and Monitoring</span>
+                        <span class="pub-venue"><a href="https://www.i2sc.net/i2sc-kick-off-event" target="_blank" rel="noopener">Opening of the Interdisciplinary Institute for Societal Computing (I2SC)</a>, Saarland University, September 7-8, 2023 (panelist)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://techpolicy.press/no-perfect-solution-to-platform-profiling-under-digital-services-act/" class="pub-title" target="_blank" rel="noopener">No Perfect Solution to Platform Profiling Under Digital Services Act</a>
+                        <span class="pub-venue">Tech Policy Press</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎙️</span>
+                    <div class="pub-content">
+                        <a href="https://www.thoughtworks.com/es-es/insights/podcasts/tecnologia-y-negocios/transparencia-para-la-IA-responsable?gh_src=d8e4908b1" class="pub-title" target="_blank" rel="noopener">Transparencia para la IA responsable</a>
+                        <span class="pub-venue">Thoughtworks Spain Tecnología y Negocios Podcast</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/this-is-not-a-system-card-scrutinising-metas-transparency-announcements/" class="pub-title" target="_blank" rel="noopener">This is not a System Card: Scrutinising Meta's Transparency Announcements</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://schedule.mozillafestival.org/session/APD3CA-1?ref=share" class="pub-title" target="_blank" rel="noopener">AI Transparency roundtable</a>
+                        <span class="pub-venue">Mozilla Festival House Amsterdam, June 19-21, 2023 (roundtable leader)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://schedule.mozillafestival.org/session/ZMMMHV-1?ref=share" class="pub-title" target="_blank" rel="noopener">Practical tools for responsible tech & AI</a>
+                        <span class="pub-venue">Mozilla Festival House Amsterdam, June 19-21, 2023 (workshop leader)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://www.cpdpconferences.org/cpdp-panels/will-the-digital-services-act-promote-safer-and-healthier-algorithmic-rankings" class="pub-title" target="_blank" rel="noopener">Will the Digital Services Act Promote Safer and Healthier Algorithmic Rankings?</a>
+                        <span class="pub-venue">Computers, Privacy, and Data Protection 2023, Brussels, May 24-26, 2023 (panelist) - <a href="https://www.youtube.com/watch?v=Ef2y-x4tbQA" target="_blank" rel="noopener">recording</a></span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">AI – The link between AI Governance, MLOps, and Responsible AI</span>
+                        <span class="pub-venue"><a href="https://datainnovationsummit.com/" target="_blank" rel="noopener">Data Innovation Summit 2023</a>, Stockholm, May 11-12, 2023 (panelist)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Applying responsible tech & AI to power your organization</span>
+                        <span class="pub-venue"><a href="https://datainnovationsummit.com/" target="_blank" rel="noopener">Data Innovation Summit 2023</a>, Stockholm, May 11-12, 2023 (workshop leader)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <a href="https://www.thoughtworks.com/insights/e-books/three-lenses-to-help-design-better-socially-responsible-ai" class="pub-title" target="_blank" rel="noopener">Three lenses to help design better, socially responsible AI</a>
+                        <span class="pub-venue">Ebook published by Thoughtworks</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Molavi, R., McCrosky, J.</span>
+                        <a href="https://foundation.mozilla.org/en/research/library/ai-transparency-in-practice/" class="pub-title" target="_blank" rel="noopener">AI Transparency in Practice</a>
+                        <span class="pub-venue">Report published by Mozilla</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Beknazar-Yuzbashev, G., Durán, R., McCrosky, J., Stalinski, M.</span>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4307346" class="pub-title" target="_blank" rel="noopener">Toxic Content and User Engagement on Social Media: Evidence from a Field Experiment</a>
+                        <span class="pub-venue">NBER Workshop of Digital Economics</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., Parry, D., Sewall, C., Orben, A.</span>
+                        <a href="https://tmb.apaopen.org/pub/2oek34av/release/1" class="pub-title" target="_blank" rel="noopener">Using Browser Data to Understand Desires to Spend Time Online</a>
+                        <span class="pub-venue">Technology, Mind, and Behavior, Volume 4, Issue 1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2022</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Ricks, B., McCrosky, J.</span>
+                        <a href="https://foundation.mozilla.org/en/research/library/user-controls/report/" class="pub-title" target="_blank" rel="noopener">Does This Button Work? Investigating YouTube's ineffective user controls</a>
+                        <span class="pub-venue">Report of the Mozilla Foundation</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <span class="pub-title-plain">Researching Platforms</span>
+                        <span class="pub-venue"><a href="https://blogs.ed.ac.uk/reimagining/" target="_blank" rel="noopener">Reimagining Platforms conference</a>, University of Edinburgh, October 31, 2022 (panelist)</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://vimeo.com/771672027" class="pub-title" target="_blank" rel="noopener">Responsible Tech to tackle the climate emergency</a>
+                        <span class="pub-venue"><a href="https://www.sustainablenordic.com/" target="_blank" rel="noopener">Sustainable Business Nordic</a></span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., Tanskanen, A.</span>
+                        <a href="https://foundation.mozilla.org/en/blog/the-regretsreporter-user-controls-study-machine-learning-to-measure-semantic-similarity-of-youtube-videos/" class="pub-title" target="_blank" rel="noopener">The RegretsReporter User Controls Study: Machine learning to measure semantic similarity of YouTube videos</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., Ricks, B.</span>
+                        <a href="https://foundation.mozilla.org/en/blog/regretsreporter-user-controls-study-1/" class="pub-title" target="_blank" rel="noopener">Who's in control? The RegretsReporter User Controls Study</a>
+                        <span class="pub-venue">Mozilla Foundation Advocacy Insights Blog</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2021</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎙️</span>
+                    <div class="pub-content">
+                        <a href="https://foundation.mozilla.org/en/blog/mozilla-explains-why-did-i-watch-that/" class="pub-title" target="_blank" rel="noopener">Mozilla Explains: Why Did I Watch That?</a>
+                        <span class="pub-venue">YouTube video series</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://dataethics.eu/the-inherent-discrimination-of-microtargeting/" class="pub-title" target="_blank" rel="noopener">The Inherent Discrimination of Microtargeting</a>
+                        <span class="pub-venue">DataEthics EU ThinkDo Tank</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📊</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., Gerkink, B.</span>
+                        <a href="https://assets.mofoprod.net/network/documents/Mozilla_YouTube_Regrets_Report.pdf" class="pub-title" target="_blank" rel="noopener">YouTube Regrets: A crowdsourced investigation into YouTube's recommendation algorithm</a>
+                        <span class="pub-venue">Report of the Mozilla Foundation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2020</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">✍️</span>
+                    <div class="pub-content">
+                        <a href="https://blog.mozilla.org/data/2020/03/30/opening-data-to-understand-social-distancing/" class="pub-title" target="_blank" rel="noopener">Opening data to understand social distancing</a>
+                        <span class="pub-venue">Data@Mozilla blog</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2019</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">🎤</span>
+                    <div class="pub-content">
+                        <a href="https://drive.google.com/file/d/1H-3jUswhOCxHjxQz-t7usgHxG8DL85lk/view?usp=sharing" class="pub-title" target="_blank" rel="noopener">Unintended Consequences: where metrics meet people</a>
+                        <span class="pub-venue">Invited presentation for Silo AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2012</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Hossain, A., Konrad, S., Dosman, J.A., Senthilselvan, A., McCrosky, J., Pahwa, P.</span>
+                        <span class="pub-title-plain">The Determinants of Chronic Bronchitis in Aboriginal Children and Youth</span>
+                        <span class="pub-venue">Canadian Respiratory Journal, Vol 19, No 6</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Pahwa, P., Karunanayake, C.P., McCrosky, J., Thorpe, L.</span>
+                        <span class="pub-title-plain">Longitudinal trends in mental health among ethnic groups in Canada</span>
+                        <span class="pub-venue">Chronic Diseases and Injuries in Canada, Vol 32, No 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2010</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">McCrosky, J., Pahwa, P.</span>
+                        <span class="pub-title-plain">Psychological Stress may be a Causative Factor in the Incidence of Bowel Disease</span>
+                        <span class="pub-venue">Canadian Society for Epidemiology and Biostatistics National Student Conference</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2008</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <a href="https://uwspace.uwaterloo.ca/bitstream/handle/10012/3697/thesis.pdf%3Bjsessionid=FA32627D87E40A80B08384BA472EBC56?sequence=1" class="pub-title" target="_blank" rel="noopener">A new measure for clustering model selection</a>
+                        <span class="pub-venue">M.Math. thesis, University of Waterloo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h3 class="year-header">2004</h3>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Hailes, J., Kouritzin, M.A., Marsh, R., McCrosky, J.</span>
+                        <span class="pub-title-plain">Tracking Promyelocytic Leukemia Nuclear Bodies for Disease Detection: a Proof of Concept via Filtering</span>
+                        <span class="pub-venue">Proceedings of the International Conference on MEMS, Nano, and Smart Systems</span>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <span class="pub-type">📄</span>
+                    <div class="pub-content">
+                        <span class="pub-authors">Blount, D., Kouritzin, M.A., McCrosky, J.</span>
+                        <span class="pub-title-plain">Artificial learning approaches for multi-target tracking</span>
+                        <span class="pub-venue">Automatic Target Recognition XIV, ed. Firooz A. Sadjadi, Proceedings of SPIE vol. 5426, p. 293-304</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
