@@ -1,0 +1,6 @@
+# Jekyll configuration for GitHub Pages
+# Exclude files from being published
+exclude:
+  - CLAUDE.md
+  - README.md
+  - .gitignore
