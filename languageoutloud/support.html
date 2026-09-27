@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Language Out Loud</title>
+    <meta name="description" content="Support and FAQ for Language Out Loud, the speak-out-loud language learning app.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nordic-white: #F7F7F5;
+            --nordic-cream: #E8E6E1;
+            --nordic-gray: #4A5568;
+            --nordic-dark: #2D3748;
+            --nordic-blue: #2C5282;
+            --nordic-deep-blue: #1A365D;
+            --nordic-accent: #D97706;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--nordic-dark);
+            background-color: var(--nordic-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .page-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: var(--nordic-gray);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, var(--nordic-blue) 0%, var(--nordic-deep-blue) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0 3rem;
+        }
+
+        .summary-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .summary-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .summary-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--nordic-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: var(--nordic-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--nordic-gray);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--nordic-gray);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--nordic-accent);
+            text-decoration: underline;
+        }
+
+        strong {
+            color: var(--nordic-dark);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background-color: var(--nordic-cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--nordic-accent);
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--nordic-cream);
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Language Out Loud</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header">
+            <h1>Support</h1>
+            <p class="last-updated">Language Out Loud is in public testing through TestFlight.</p>
+        </div>
+
+        <section id="contact">
+            <h2>Get in touch</h2>
+            <p>
+                The quickest route is the <strong>Send feedback</strong> screen inside the App (Settings &rarr; Send feedback),
+                which can attach listening diagnostics that help us see what the microphone picked up.
+                You can also email <a href="mailto:mccrosky@gmail.com">mccrosky@gmail.com</a>.
+            </p>
+        </section>
+
+        <section id="faq">
+            <h2>Common questions</h2>
+
+            <h3>The app says "nothing heard" when I speak</h3>
+            <p>
+                Open Settings &rarr; Listening log. Each of your turns shows how loud you were ("peak") against what counted as
+                speech in that room ("threshold"). If your peaks sit below the threshold, move somewhere quieter or closer to the
+                microphone, or use earbuds with a microphone. If it keeps happening, send feedback with diagnostics attached.
+            </p>
+
+            <h3>I picked the wrong level</h3>
+            <p>Settings &rarr; Level. You can switch at any time; the next lesson will be chosen for the new level.</p>
+
+            <h3>I've done every lesson at my level</h3>
+            <p>
+                During the test the App comes with a fixed set of lessons per level. Move up a level, replay a lesson, or tap
+                "I'd do more lessons at this level" so we know there is demand.
+            </p>
+
+            <h3>Can I use it with the screen off?</h3>
+            <p>Yes. Lessons keep playing with the phone locked or in a pocket; the chime marks your turn and the lock-screen controls pause, resume and skip.</p>
+
+            <h3>How do I delete my data?</h3>
+            <p>Settings &rarr; Reset all progress removes everything on the device. See the <a href="privacy.html">privacy policy</a> for what our server keeps and how to have it deleted.</p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:mccrosky@gmail.com">Contact</a>
+            </div>
+            <p style="color: var(--nordic-gray); font-size: 0.95rem;">
+                &copy; 2026 Inciteful Data Consulting Oy
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
