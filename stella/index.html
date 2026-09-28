@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stella</title>
+    <meta name="description" content="Stella, a private personal assistant.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nordic-white: #F7F7F5;
+            --nordic-cream: #E8E6E1;
+            --nordic-gray: #4A5568;
+            --nordic-dark: #2D3748;
+            --nordic-blue: #2C5282;
+            --nordic-deep-blue: #1A365D;
+            --nordic-accent: #D97706;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--nordic-dark);
+            background-color: var(--nordic-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        .page-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: var(--nordic-gray);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, var(--nordic-blue) 0%, var(--nordic-deep-blue) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0 3rem;
+        }
+
+        .summary-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .summary-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .summary-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--nordic-cream);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--nordic-deep-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--nordic-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: var(--nordic-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--nordic-gray);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--nordic-gray);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--nordic-accent);
+            text-decoration: underline;
+        }
+
+        strong {
+            color: var(--nordic-dark);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background-color: var(--nordic-cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--nordic-accent);
+        }
+
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--nordic-cream);
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--nordic-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--nordic-accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Stella</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="page-header">
+            <h1>Stella</h1>
+            <p class="last-updated">A private personal assistant for Jesse McCrosky.</p>
+        </div>
+
+        <section id="what">
+            <h2>What it is</h2>
+            <p>
+                Stella is a personal assistant built and run by Jesse McCrosky for his own use. It helps him keep on top of
+                his email and calendar: reading and summarising messages, drafting and sending mail he asks for, and
+                creating and checking calendar events. It runs on his own computer and is not offered as a product or
+                service to anyone else.
+            </p>
+        </section>
+
+        <section id="google">
+            <h2>Google sign-in</h2>
+            <p>
+                Stella signs in with Google only to reach the Gmail and Google Calendar accounts of its owner. No other
+                users sign in to it.
+            </p>
+        </section>
+
+        <section id="links">
+            <h2>More</h2>
+            <ul>
+                <li><a href="privacy.html">Privacy policy</a></li>
+                <li><a href="mailto:mccrosky@gmail.com">Contact</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:mccrosky@gmail.com">Contact</a>
+            </div>
+            <p style="color: var(--nordic-gray); font-size: 0.95rem;">
+                &copy; 2026 Inciteful Data Consulting Oy
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
