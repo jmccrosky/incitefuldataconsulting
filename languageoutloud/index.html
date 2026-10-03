@@ -208,6 +208,34 @@
             color: var(--nordic-accent);
         }
 
+        .screens {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1rem;
+        }
+
+        .screens figure {
+            flex: 0 0 200px;
+            scroll-snap-align: start;
+        }
+
+        .screens img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            border: 1px solid var(--nordic-cream);
+            display: block;
+        }
+
+        .screens figcaption {
+            font-size: 0.9rem;
+            color: var(--nordic-gray);
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -255,6 +283,17 @@
                 and whatever was shaky comes back in the next lesson. Headphones on, screen off, and you are actually speaking
                 the language from the first minute.
             </p>
+        </section>
+
+        <section id="screens">
+            <h2>Screenshots</h2>
+            <div class="screens">
+                <figure><img src="screens/home.jpg" alt="Home screen with the next lesson, On the street in Helsinki, ready to play out loud or in your head" width="552" height="1200" loading="lazy"><figcaption>Your next lesson, out loud or in your head.</figcaption></figure>
+                <figure><img src="screens/conversation.jpg" alt="Lesson screen during the opening conversation: Harri says Puhutko englantia? with the English below" width="552" height="1200" loading="lazy"><figcaption>The opening conversation, with optional subtitles.</figcaption></figure>
+                <figure><img src="screens/your-turn.jpg" alt="Lesson screen showing Your turn with a microphone, prompting the learner to speak" width="552" height="1200" loading="lazy"><figcaption>Your turn: say it out loud.</figcaption></figure>
+                <figure><img src="screens/lesson-shape.jpg" alt="Onboarding page explaining the four stages of a lesson" width="552" height="1200" loading="lazy"><figcaption>How a lesson is built.</figcaption></figure>
+                <figure><img src="screens/welcome.jpg" alt="Welcome screen: Finnish, out loud" width="552" height="1200" loading="lazy"><figcaption>First launch.</figcaption></figure>
+            </div>
         </section>
 
         <section id="testing">
