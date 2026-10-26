@@ -4,326 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Out Loud</title>
+    <meta name="description" content="Learn Finnish by listening and speaking. Twenty-minute audio lessons you do with your voice. Free beta for iPhone.">
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    <meta name="description" content="Language Out Loud: audio language lessons that make you talk. Finnish first.">
+    <meta property="og:title" content="Language Out Loud: Finnish, out loud">
+    <meta property="og:description" content="Twenty-minute audio lessons you do with your voice. Free beta for iPhone.">
+    <meta property="og:image" content="https://incitefuldata.com/languageoutloud/og.png">
+    <meta property="og:url" content="https://incitefuldata.com/languageoutloud/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#14161c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #14161c;
+            --surface: #1f222a;
+            --surface-2: #272b35;
+            --line: #2f3440;
+            --text: #f4f1ec;
+            --muted: #a9adb8;
+            --accent: #f1be8c;
+            --accent-ink: #2a1a0c;
+            --accent-soft: rgba(241, 190, 140, 0.12);
+            --green: #8fd19e;
+            --radius: 22px;
+            --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+            --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
-        :root {
-            --nordic-white: #F7F7F5;
-            --nordic-cream: #E8E6E1;
-            --nordic-gray: #4A5568;
-            --nordic-dark: #2D3748;
-            --nordic-blue: #2C5282;
-            --nordic-deep-blue: #1A365D;
-            --nordic-accent: #D97706;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--nordic-dark);
-            background-color: var(--nordic-white);
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        a { color: var(--accent); }
 
-        header {
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--nordic-cream);
-        }
+        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
+        /* Header */
+        header { padding: 22px 0; }
+        nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 650; }
+        .brand img { width: 34px; height: 34px; border-radius: 9px; }
+        .nav-links { display: flex; gap: 22px; list-style: none; font-size: 15px; }
+        .nav-links a { color: var(--muted); text-decoration: none; }
+        .nav-links a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
             align-items: center;
+            padding: 48px 24px 72px;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--nordic-deep-blue);
-            text-decoration: none;
+        .pill-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent-soft); color: var(--accent);
+            font-size: 14px; font-weight: 600;
+            padding: 6px 12px; border-radius: 999px; margin-bottom: 22px;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--nordic-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--nordic-accent);
-        }
-
-        .page-header {
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-
+        .pill-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
         h1 {
-            font-size: 3rem;
+            font-family: var(--display);
+            font-size: clamp(44px, 7vw, 76px);
+            line-height: 1.02;
+            letter-spacing: -0.02em;
             font-weight: 700;
-            color: var(--nordic-deep-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 22px;
         }
+        h1 em { font-style: normal; color: var(--accent); }
+        .lede { font-size: 20px; color: var(--muted); max-width: 30em; margin-bottom: 30px; }
 
-        .last-updated {
-            color: var(--nordic-gray);
-            font-size: 1rem;
-            font-style: italic;
+        .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            background: var(--accent); color: var(--accent-ink);
+            font-weight: 700; font-size: 18px; text-decoration: none;
+            padding: 16px 28px; border-radius: 999px;
+            transition: transform .15s ease, box-shadow .15s ease;
+            box-shadow: 0 8px 30px rgba(241, 190, 140, 0.25);
         }
+        .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 34px rgba(241, 190, 140, 0.35); }
+        .btn svg { width: 20px; height: 20px; }
+        .btn.secondary { background: var(--surface-2); color: var(--text); box-shadow: none; }
+        .cta-note { color: var(--muted); font-size: 15px; }
 
-        .summary-box {
-            background: linear-gradient(135deg, var(--nordic-blue) 0%, var(--nordic-deep-blue) 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0 3rem;
+        .phones { position: relative; height: 560px; }
+        .phone {
+            position: absolute; width: 250px; border-radius: 36px; overflow: hidden;
+            border: 8px solid #0b0c10; background: #0b0c10;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
+        .phone img { display: block; width: 100%; height: auto; }
+        .phone.back { left: 0; top: 40px; transform: rotate(-6deg); opacity: 0.9; }
+        .phone.front { right: 10px; top: 0; transform: rotate(4deg); }
 
-        .summary-box h3 {
-            color: white;
-            margin-bottom: 1rem;
+        /* Sections */
+        section { padding: 72px 0; border-top: 1px solid var(--line); }
+        .eyebrow { color: var(--accent); font-weight: 650; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+        h2 { font-family: var(--display); font-size: clamp(32px, 4.5vw, 46px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+        .section-lede { color: var(--muted); font-size: 19px; max-width: 36em; margin-bottom: 40px; }
+        .section-lede strong { color: var(--text); }
+
+        /* Install */
+        .install { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
+        .steps { list-style: none; display: grid; gap: 16px; }
+        .step {
+            display: grid; grid-template-columns: 52px 1fr; gap: 18px;
+            background: var(--surface); border: 1px solid var(--line);
+            border-radius: var(--radius); padding: 24px;
         }
-
-        .summary-box ul {
-            margin-left: 1.5rem;
+        .step-num {
+            width: 52px; height: 52px; border-radius: 16px;
+            display: grid; place-items: center;
+            background: var(--accent-soft); color: var(--accent);
+            font-family: var(--display); font-size: 26px; font-weight: 700;
         }
+        .step h3 { font-size: 20px; margin-bottom: 6px; }
+        .step p { color: var(--muted); margin-bottom: 14px; }
+        .step p:last-child { margin-bottom: 0; }
+        .step .btn { font-size: 16px; padding: 12px 22px; }
+        .step .small { font-size: 15px; }
+        .tap { display: inline-block; background: var(--surface-2); color: var(--text); border-radius: 8px; padding: 1px 8px; font-weight: 600; font-size: 15px; white-space: nowrap; }
 
-        .summary-box li {
-            margin-bottom: 0.5rem;
+        .qr-card {
+            position: sticky; top: 24px;
+            background: var(--surface); border: 1px solid var(--line);
+            border-radius: var(--radius); padding: 26px; text-align: center;
         }
+        .qr-card .qr { background: #fff; border-radius: 16px; padding: 18px; margin: 0 auto 16px; width: 200px; }
+        .qr-card .qr img { display: block; width: 100%; height: auto; }
+        .qr-card h3 { font-size: 18px; margin-bottom: 6px; }
+        .qr-card p { color: var(--muted); font-size: 15px; }
+        .on-iphone .qr-card { display: none; }
+        .on-iphone .install { grid-template-columns: 1fr; }
 
-        section {
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--nordic-cream);
+        .callout {
+            margin-top: 22px; padding: 18px 22px; border-radius: 16px;
+            background: var(--accent-soft); color: var(--text); font-size: 16px;
         }
+        .callout strong { color: var(--accent); }
 
-        section:last-of-type {
-            border-bottom: none;
+        /* How it works */
+        .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .stage { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+        .stage .icon { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--surface-2); color: var(--accent); margin-bottom: 16px; }
+        .stage .icon svg { width: 22px; height: 22px; }
+        .stage h3 { font-size: 18px; margin-bottom: 6px; }
+        .stage p { color: var(--muted); font-size: 15.5px; }
+
+        .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+        .fact { background: var(--surface-2); border-radius: 999px; padding: 8px 16px; font-size: 15px; color: var(--text); }
+
+        /* Screens */
+        .screens { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-width: thin; }
+        .screens figure { flex: 0 0 210px; scroll-snap-align: start; }
+        .screens img { width: 100%; height: auto; display: block; border-radius: 26px; border: 6px solid #0b0c10; }
+        .screens figcaption { color: var(--muted); font-size: 14.5px; margin-top: 10px; line-height: 1.4; }
+
+        /* FAQ */
+        .faq { display: grid; gap: 12px; max-width: 760px; }
+        details { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 0 22px; }
+        summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 650; font-size: 18px; display: flex; justify-content: space-between; gap: 16px; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: "+"; color: var(--accent); font-size: 24px; line-height: 1; transition: transform .2s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details p { color: var(--muted); padding-bottom: 20px; }
+
+        /* Final CTA */
+        .final { text-align: center; }
+        .final .icon-big { width: 96px; height: 96px; border-radius: 24px; margin: 0 auto 22px; display: block; }
+        .final .cta-row { justify-content: center; }
+        .final .section-lede { margin-left: auto; margin-right: auto; }
+
+        footer { border-top: 1px solid var(--line); padding: 36px 0 48px; color: var(--muted); font-size: 15px; }
+        footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+        footer a { color: var(--muted); text-decoration: none; margin-right: 20px; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; padding-top: 24px; gap: 24px; }
+            .phones { height: 430px; max-width: 420px; width: 100%; margin: 0 auto; }
+            .phone { width: 190px; border-width: 6px; border-radius: 28px; }
+            .install { grid-template-columns: 1fr; }
+            .qr-card { position: static; }
+            .stages { grid-template-columns: 1fr 1fr; }
         }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--nordic-deep-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--nordic-blue);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        h4 {
-            font-size: 1.25rem;
-            color: var(--nordic-dark);
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-            color: var(--nordic-gray);
-            font-size: 1.05rem;
-        }
-
-        ul, ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--nordic-gray);
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        a {
-            color: var(--nordic-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: var(--nordic-accent);
-            text-decoration: underline;
-        }
-
-        strong {
-            color: var(--nordic-dark);
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background-color: var(--nordic-cream);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--nordic-accent);
-        }
-
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid var(--nordic-cream);
-            margin-top: 3rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--nordic-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: var(--nordic-accent);
-        }
-
-        .screens {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 1rem;
-        }
-
-        .screens figure {
-            flex: 0 0 200px;
-            scroll-snap-align: start;
-        }
-
-        .screens img {
-            width: 100%;
-            height: auto;
-            border-radius: 18px;
-            border: 1px solid var(--nordic-cream);
-            display: block;
-        }
-
-        .screens figcaption {
-            font-size: 0.9rem;
-            color: var(--nordic-gray);
-            margin-top: 0.5rem;
-            line-height: 1.4;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
+        @media (max-width: 560px) {
+            body { font-size: 16px; }
+            .wrap, .hero { padding-left: 16px; padding-right: 16px; }
+            .nav-links { gap: 14px; }
+            .nav-links .hide-sm { display: none; }
+            .lede { font-size: 18px; }
+            .btn { width: 100%; }
+            .phones { height: 360px; }
+            .phone { width: 160px; }
+            .step { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+            .stages { grid-template-columns: 1fr; }
+            section { padding: 56px 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="wrap">
             <nav>
-                <a href="index.html" class="logo">Language Out Loud</a>
+                <a href="./" class="brand"><img src="icon.png" alt="">Language Out Loud</a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#install">Install</a></li>
+                    <li class="hide-sm"><a href="#how">How it works</a></li>
                     <li><a href="support.html">Support</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
+                    <li class="hide-sm"><a href="privacy.html">Privacy</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <div class="page-header">
-            <img src="icon.png" alt="" width="96" height="96" style="display:block;border-radius:22px;margin-bottom:14px">
-            <h1>Language Out Loud</h1>
-            <p class="last-updated">Audio lessons that make you talk. Finnish first, more languages to come.</p>
+    <main>
+        <div class="wrap hero">
+            <div>
+                <span class="pill-tag"><span class="dot"></span>Free public beta for iPhone</span>
+                <h1>Finnish,<br><em>out loud.</em></h1>
+                <p class="lede">
+                    Twenty-minute audio lessons you do with your voice. Put your headphones in, listen to a short scene,
+                    and say the Finnish when it's your turn. The app listens, tells you how it went, and brings back
+                    what was shaky next time.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="#install">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m6 11 6 6 6-6"/><path d="M5 20h14"/></svg>
+                        Get it on your iPhone
+                    </a>
+                    <span class="cta-note">Free · no account · about two minutes to set up</span>
+                </div>
+            </div>
+            <div class="phones" aria-hidden="true">
+                <div class="phone back"><img src="screens/home.jpg" alt=""></div>
+                <div class="phone front"><img src="screens/your-turn.jpg" alt=""></div>
+            </div>
         </div>
 
-        <section id="what">
-            <h2>What it is</h2>
-            <p>
-                Twenty-minute audio lessons you do with your voice. You listen to a short scene, the narrator takes it apart,
-                and when you hear the chime you say the phrase out loud. A native Finnish voice answers, your pronunciation is scored,
-                and whatever was shaky comes back in the next lesson. Headphones on, screen off, and you are actually speaking
-                the language from the first minute.
-            </p>
-        </section>
+        <section id="install">
+            <div class="wrap">
+                <p class="eyebrow">Install</p>
+                <h2>Three steps, about two minutes</h2>
+                <p class="section-lede">
+                    While the app is in testing it's handed out through <strong>TestFlight</strong>, Apple's own app for
+                    trying apps before they reach the App Store. It's free, and you only set it up once.
+                </p>
 
-        <section id="screens">
-            <h2>Screenshots</h2>
-            <div class="screens">
-                <figure><img src="screens/home.jpg" alt="Home screen with the next lesson, On the street in Helsinki, ready to play out loud or in your head" width="552" height="1200" loading="lazy"><figcaption>Your next lesson, out loud or in your head.</figcaption></figure>
-                <figure><img src="screens/conversation.jpg" alt="Lesson screen during the opening conversation: Harri says Puhutko englantia? with the English below" width="552" height="1200" loading="lazy"><figcaption>The opening conversation, with optional subtitles.</figcaption></figure>
-                <figure><img src="screens/your-turn.jpg" alt="Lesson screen showing Your turn with a microphone, prompting the learner to speak" width="552" height="1200" loading="lazy"><figcaption>Your turn: say it out loud.</figcaption></figure>
-                <figure><img src="screens/lesson-shape.jpg" alt="Onboarding page explaining the four stages of a lesson" width="552" height="1200" loading="lazy"><figcaption>How a lesson is built.</figcaption></figure>
-                <figure><img src="screens/welcome.jpg" alt="Welcome screen: Finnish, out loud" width="552" height="1200" loading="lazy"><figcaption>First launch.</figcaption></figure>
+                <div class="install">
+                    <ol class="steps">
+                        <li class="step">
+                            <div class="step-num">1</div>
+                            <div>
+                                <h3>Get TestFlight from the App Store</h3>
+                                <p>It's a free app made by Apple. Tap <span class="tap">Get</span> and wait for it to install. You don't need to sign up for anything.</p>
+                                <p><a class="btn secondary" href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener">TestFlight in the App Store</a></p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-num">2</div>
+                            <div>
+                                <h3>Join the Language Out Loud beta</h3>
+                                <p>Tap the button below on your iPhone. TestFlight opens: tap <span class="tap">Accept</span>, then <span class="tap">Install</span>.</p>
+                                <p><a class="btn" href="https://testflight.apple.com/join/Rqr9ub5b">Join the free beta</a></p>
+                                <p class="small">If an Apple web page opens instead, that's fine: tap <span class="tap">View in TestFlight</span> on it.</p>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-num">3</div>
+                            <div>
+                                <h3>Open it and start your first lesson</h3>
+                                <p>Find Language Out Loud on your home screen and open it. Tell it where you are with Finnish (complete
+                                   beginners are welcome), and allow the microphone when it asks, so it can hear you speak.</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <aside class="qr-card">
+                        <div class="qr"><img src="testflight-qr.svg" alt="QR code linking to the Language Out Loud TestFlight beta" width="200" height="200"></div>
+                        <h3>Reading this on a computer?</h3>
+                        <p>Do step 1 on your iPhone, then point its camera at this code and tap the link that appears.</p>
+                    </aside>
+                </div>
+
+                <div class="callout">
+                    <strong>Needs an iPhone with iOS 17 or newer.</strong> There's no Android version yet.
+                    New versions arrive through TestFlight, which tells you when there's an update.
+                </div>
             </div>
         </section>
 
-        <section id="testing">
-            <h2>Public test</h2>
-            <p>
-                Language Out Loud is currently in public testing on iPhone through TestFlight. The test build comes with a fixed set
-                of lessons at every level from beginner to advanced; writing new lessons on demand is switched off while we test.
-            </p>
+        <section id="how">
+            <div class="wrap">
+                <p class="eyebrow">How it works</p>
+                <h2>Every lesson has four parts</h2>
+                <p class="section-lede">
+                    Nothing to read and nothing to type. A narrator explains in English, Finnish voices speak the Finnish,
+                    and a chime tells you when it's your turn.
+                </p>
+                <div class="stages">
+                    <div class="stage">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div>
+                        <h3>Hear a conversation</h3>
+                        <p>Two Finnish voices talk for half a minute. You won't follow it yet. That's the plan: it's what the lesson teaches.</p>
+                    </div>
+                    <div class="stage">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div>
+                        <h3>Learn it piece by piece</h3>
+                        <p>Each phrase is taken apart. You repeat the pieces out loud, then the whole thing, then again a little later.</p>
+                    </div>
+                    <div class="stage">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div>
+                        <h3>Hear it again</h3>
+                        <p>The same conversation as at the start. This time you understand it.</p>
+                    </div>
+                    <div class="stage">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg></div>
+                        <h3>Take one side</h3>
+                        <p>A speaker talks to you and you answer in Finnish. Say it in your own words: if it's right, it counts.</p>
+                    </div>
+                </div>
+                <div class="facts">
+                    <span class="fact">Beginner to advanced</span>
+                    <span class="fact">Keeps playing with the screen off</span>
+                    <span class="fact">"In your head" mode for the bus</span>
+                    <span class="fact">What you missed comes back later</span>
+                </div>
+            </div>
         </section>
 
-        <section id="links">
-            <h2>More</h2>
-            <ul>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy policy</a></li>
-                <li><a href="mailto:mccrosky@gmail.com">Contact</a></li>
-            </ul>
+        <section id="screens">
+            <div class="wrap">
+                <p class="eyebrow">Screenshots</p>
+                <h2>A look inside</h2>
+                <div class="screens">
+                    <figure><img src="screens/home.jpg" alt="Home screen with the next lesson, On the street in Helsinki, ready to play out loud or in your head" width="552" height="1200" loading="lazy"><figcaption>Your next lesson, out loud or in your head.</figcaption></figure>
+                    <figure><img src="screens/conversation.jpg" alt="Lesson screen during the opening conversation: Harri says Puhutko englantia? with the English below" width="552" height="1200" loading="lazy"><figcaption>The opening conversation, with optional subtitles.</figcaption></figure>
+                    <figure><img src="screens/your-turn.jpg" alt="Lesson screen showing Your turn with a microphone, prompting the learner to speak" width="552" height="1200" loading="lazy"><figcaption>Your turn: say it out loud.</figcaption></figure>
+                    <figure><img src="screens/lesson-shape.jpg" alt="Onboarding page explaining the four stages of a lesson" width="552" height="1200" loading="lazy"><figcaption>How a lesson is built.</figcaption></figure>
+                    <figure><img src="screens/welcome.jpg" alt="Welcome screen: Finnish, out loud" width="552" height="1200" loading="lazy"><figcaption>First launch.</figcaption></figure>
+                </div>
+            </div>
         </section>
 
-        <footer>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
+        <section id="faq">
+            <div class="wrap">
+                <p class="eyebrow">Questions</p>
+                <h2>Before you install</h2>
+                <div class="faq">
+                    <details>
+                        <summary>What is TestFlight? Is it safe?</summary>
+                        <p>TestFlight is Apple's official app for trying apps before they're released on the App Store. Apple reviews an app
+                           before it can be offered to public testers, and TestFlight installs it like any other app.</p>
+                    </details>
+                    <details>
+                        <summary>Does it cost anything?</summary>
+                        <p>No. The beta is free, with no ads, no purchases and no account to create.</p>
+                    </details>
+                    <details>
+                        <summary>Who writes the lessons? Are the voices real people?</summary>
+                        <p>The lessons are written by an AI model (Google's Gemini) and checked automatically against the teaching method
+                           before anyone hears them. The voices are Microsoft's neural text-to-speech voices, not recordings of people, and your
+                           pronunciation is scored by Microsoft's speech recognition. The app is made by one person who is learning Finnish too,
+                           not a native speaker or a teacher, which is why your feedback matters.</p>
+                    </details>
+                    <details>
+                        <summary>Does it record me?</summary>
+                        <p>Only during your turns. A few seconds of audio go off to be scored and are not kept. Nothing is recorded
+                           between turns, and "In your head" mode never turns the microphone on. Details are in the <a href="privacy.html">privacy policy</a>.</p>
+                    </details>
+                    <details>
+                        <summary>The beta link doesn't work</summary>
+                        <p>Open it on your iPhone, not on a computer, and make sure TestFlight is installed first (step 1). If it still
+                           doesn't work, <a href="mailto:mccrosky@gmail.com">email me</a> and I'll sort it out.</p>
+                    </details>
+                    <details>
+                        <summary>How do I send feedback?</summary>
+                        <p>In the app, go to Settings → Send feedback. Or take a screenshot while using the app, and TestFlight will offer to send it
+                           with a note. Everything helps, especially "this confused me".</p>
+                    </details>
+                    <details>
+                        <summary>How do I remove it?</summary>
+                        <p>Like any other app: press and hold the icon, then tap Remove App. You can remove TestFlight the same way.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="final">
+            <div class="wrap">
+                <img class="icon-big" src="icon.png" alt="">
+                <h2>Start speaking Finnish today</h2>
+                <p class="section-lede">Your first lesson is twenty minutes long. Headphones recommended.</p>
+                <div class="cta-row">
+                    <a class="btn" href="#install">Install the free beta</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div>
                 <a href="support.html">Support</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="mailto:mccrosky@gmail.com">Contact</a>
             </div>
-            <p style="color: var(--nordic-gray); font-size: 0.95rem;">
-                &copy; 2026 Inciteful Data Consulting Oy
-            </p>
-        </footer>
-    </div>
+            <div>&copy; 2026 Inciteful Data Consulting Oy</div>
+        </div>
+    </footer>
+
+    <script>
+        // On an iPhone the QR code is no use: hide it and let the steps take the full width.
+        if (/iPhone|iPod/.test(navigator.userAgent)) document.documentElement.classList.add('on-iphone');
+    </script>
 </body>
 </html>
